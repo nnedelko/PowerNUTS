@@ -15,7 +15,7 @@ for the bibtex entries).
 
 Recent changelog
 ----------------
-v3.6.0, May 17, 2023
+v3.6.0, June 1, 2023
 
 * Added Lyman-alpha alpha-beta-gamma-delta likelihood from 2206.08188 (D. C. Hooper, N. Schoeneberg, R. Murgia)
 
