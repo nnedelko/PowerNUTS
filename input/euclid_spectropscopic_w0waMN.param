@@ -29,6 +29,8 @@ data.parameters['Omega_m']    = [0.3145714273,  0.005, 1, 0.0007825674866256795,
 # forcing CLASS to mimick the neutrino treatement 'share_delta_neff = T' of CAMB
 # This was used in [2303.09451, 2405.06047] to enforce highly consistent results
 # across the CAMB/CLASS Fisher pipelines
+# If you use these, you may want to change the two parameter names also in the
+# header of the input covmat file
 #data.parameters['m_nu_camb']       = [0.06,          5.e-3, 1, 0.004383136476792409,   1, 'cosmo']
 #data.parameters['Omega_m_camb']    = [0.3145714273,  0.005, 1, 0.0007825674866256795,   1, 'cosmo']
 
