@@ -96,10 +96,10 @@ class Likelihood(object):
         if data.log_flag:
             io_mp.log_likelihood_parameters(self, command_line)
 
-    def loglkl(self, cosmo, data):
+    def loglkl_jax(self, cosmo, data):
         """
         Placeholder to remind that this function needs to be defined for a
-        new likelihood.
+        new likelihood. It must calculate the jax.value_and_grad() of a callable loglkl function.
 
         Raises
         ------
