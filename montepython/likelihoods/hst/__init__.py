@@ -1,4 +1,5 @@
 import os
+from jax import value_and_grad,jit
 from montepython.likelihood_class import Likelihood_prior
 
 
@@ -12,4 +13,8 @@ class hst(Likelihood_prior):
     def loglkl_and_grad(self, cosmo, data):
         h = cosmo.h()
         loglkl = value_and_grad(loglkl_call,[0,1,2]
+        return loglkl(cosmo.h,self.h,self.sigma)
+    def loglkl_jit(self, cosmo, data):
+        h = cosmo.h()
+        loglkl = jit(loglkl_call)
         return loglkl(cosmo.h,self.h,self.sigma)
