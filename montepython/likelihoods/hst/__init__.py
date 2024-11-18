@@ -12,7 +12,7 @@ class hst(Likelihood_prior):
         return -0.5 * (h0 - h) ** 2 / (sigma ** 2)
     def loglkl_and_grad(self, cosmo, data):
         h = cosmo.h()
-        loglkl = value_and_grad(loglkl_call,[0,1,2])
+        loglkl = jit(value_and_grad(loglkl_call,[0,1,2]))
         return loglkl(cosmo.h,self.h,self.sigma)
     def loglkl_jit(self, cosmo, data):
         h = cosmo.h()
