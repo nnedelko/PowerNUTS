@@ -107,7 +107,7 @@ class Likelihood(object):
 
         """
         raise NotImplementedError(
-            'Must implement method loglkl() in your likelihood')
+            'Must implement method loglkl_jax() in your likelihood')
 
     def read_from_file(self, path, data, command_line):
         """
