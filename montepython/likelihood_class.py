@@ -96,10 +96,10 @@ class Likelihood(object):
         if data.log_flag:
             io_mp.log_likelihood_parameters(self, command_line)
 
-    def loglkl_jax(self, cosmo, data):
+    def loglkl_and_grad(self, cosmo, data):
         """
         Placeholder to remind that this function needs to be defined for a
-        new likelihood. It must calculate the jax.value_and_grad() of a callable loglkl function.
+        new likelihood. It must calculate the jax.value_and_grad() of a callable loglkl_call function.
 
         Raises
         ------
@@ -107,7 +107,7 @@ class Likelihood(object):
 
         """
         raise NotImplementedError(
-            'Must implement method loglkl_jax() in your likelihood')
+            'Must implement method loglkl_and_grad() in your likelihood')
 
     def read_from_file(self, path, data, command_line):
         """
