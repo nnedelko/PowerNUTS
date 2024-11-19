@@ -10,9 +10,12 @@ class hst(Likelihood_prior):
     # Likelihood class.
     def loglkl_call(pdict):
         return -0.5 * (pdict['h0'] - pdict['h']) ** 2 / (pdict['sigma'] ** 2)
+    @partial(jit, static_argnums=(0,))
     def loglkl_and_grad(self, cosmo, data):
-        loglkl = jit(value_and_grad(loglkl_call))
+        loglkl = (value_and_grad(loglkl_call))
         return loglkl({'h0':cosmo.h,'h':self.h,'sigma':self.sigma})
+
+    @partial(jit, static_argnums=(0,))
     def loglkl_jit(self, cosmo, data):
         h = cosmo.h()
         loglkl = jit(loglkl_call)
